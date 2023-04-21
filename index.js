@@ -1,8 +1,12 @@
 const joi = require("joi");
 const express = require("express");
+const logger = require("./logger");
 const app = express();
 
 app.use(express.json());
+// app.use(logger);
+app.use(express.urlencoded({ extended: true }));
+// console.log("App: ", app);
 
 const courses = [
   { id: 1, name: "course1" },
